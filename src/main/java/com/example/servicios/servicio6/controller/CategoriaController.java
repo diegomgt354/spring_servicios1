@@ -5,6 +5,7 @@ import com.example.servicios.servicio6.service.CategoriaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -38,7 +39,10 @@ public class CategoriaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "HTTP STATUS 200 -> Registro Exitoso",
-                    content = @Content(mediaType = "application/json")
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = Categoria.class)
+                    )
             ),
             @ApiResponse(
                     responseCode = "400",
